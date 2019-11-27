@@ -1,0 +1,62 @@
+{
+    "LoadBalancers": [
+        {
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-west-2:588487667149:loadbalancer/app/LB1/cd2e696ec5001e29",
+            "DNSName": "LB1-1639089185.us-west-2.elb.amazonaws.com",
+            "CanonicalHostedZoneId": "Z1H1FL5HABSF5",
+            "CreatedTime": "2019-11-23T14:38:52.610Z",
+            "LoadBalancerName": "LB1",
+            "Scheme": "internet-facing",
+            "VpcId": "vpc-0e6c846881215aff9",
+            "State": {
+                "Code": "active"
+            },
+            "Type": "application",
+            "AvailabilityZones": [
+                {
+                    "ZoneName": "us-west-2c",
+                    "SubnetId": "subnet-09efc7975f2deb155",
+                    "LoadBalancerAddresses": []
+                },
+                {
+                    "ZoneName": "us-west-2d",
+                    "SubnetId": "subnet-0eb0441b460fa57df",
+                    "LoadBalancerAddresses": []
+                }
+            ],
+            "SecurityGroups": [
+                "sg-047784e4b2f8ed1a2"
+            ],
+            "IpAddressType": "ipv4"
+        },
+        {
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-west-2:588487667149:loadbalancer/app/LB2/c664095665cb2626",
+            "DNSName": "LB2-1946518860.us-west-2.elb.amazonaws.com",
+            "CanonicalHostedZoneId": "Z1H1FL5HABSF5",
+            "CreatedTime": "2019-11-23T14:40:02.160Z",
+            "LoadBalancerName": "LB2",
+            "Scheme": "internet-facing",
+            "VpcId": "vpc-0e6c846881215aff9",
+            "State": {
+                "Code": "active"
+            },
+            "Type": "application",
+            "AvailabilityZones": [
+                {
+                    "ZoneName": "us-west-2c",
+                    "SubnetId": "subnet-09efc7975f2deb155",
+                    "LoadBalancerAddresses": []
+                },
+                {
+                    "ZoneName": "us-west-2d",
+                    "SubnetId": "subnet-0eb0441b460fa57df",
+                    "LoadBalancerAddresses": []
+                }
+            ],
+            "SecurityGroups": [
+                "sg-0ea55a7c47bac5c16"
+            ],
+            "IpAddressType": "ipv4"
+        }
+    ]
+}

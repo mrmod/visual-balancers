@@ -1,0 +1,16 @@
+{
+    "TargetHealthDescriptions": [
+        {
+            "Target": {
+                "Id": "i-04858af504e2957eb",
+                "Port": 80
+            },
+            "HealthCheckPort": "80",
+            "TargetHealth": {
+                "State": "unused",
+                "Reason": "Target.NotInUse",
+                "Description": "Target is in an Availability Zone that is not enabled for the load balancer"
+            }
+        }
+    ]
+}

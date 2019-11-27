@@ -1,0 +1,351 @@
+{
+    "SecurityGroups": [
+        {
+            "Description": "default VPC security group",
+            "GroupName": "default",
+            "IpPermissions": [
+                {
+                    "FromPort": 5432,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "172.16.0.0/23",
+                            "Description": "All VPC"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 5432,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": [
+                        {
+                            "GroupId": "sg-013a87f09a9a2cf14",
+                            "UserId": "588487667149"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "588487667149",
+            "GroupId": "sg-013a87f09a9a2cf14",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "db-poc-access"
+                }
+            ],
+            "VpcId": "vpc-0e6c846881215aff9"
+        },
+        {
+            "Description": "External access testing",
+            "GroupName": "external-access-poc",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "71.204.152.97/32",
+                            "Description": "Only my house"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "588487667149",
+            "GroupId": "sg-0315e32814c545652",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "VpcId": "vpc-0e6c846881215aff9"
+        },
+        {
+            "Description": "load-balancer-wizard-1 created on 2019-11-23T06:38:07.892-08:00",
+            "GroupName": "LB-Project-LB1",
+            "IpPermissions": [
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "71.204.152.97/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "588487667149",
+            "GroupId": "sg-047784e4b2f8ed1a2",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "VpcId": "vpc-0e6c846881215aff9"
+        },
+        {
+            "Description": "Allow SSH POC traffic",
+            "GroupName": "POC",
+            "IpPermissions": [
+                {
+                    "FromPort": 22,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "71.204.152.97/32",
+                            "Description": "Santa Cruz"
+                        },
+                        {
+                            "CidrIp": "76.102.206.171/32",
+                            "Description": "Ukiah"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 22,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 6379,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "172.16.0.0/23",
+                            "Description": "Allow VPC to Redis"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 6379,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 636,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "172.16.0.0/23",
+                            "Description": "All VPC to TLS LDAP"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 636,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 389,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "172.16.0.0/23",
+                            "Description": "All VPC to LDAP"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 389,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "588487667149",
+            "GroupId": "sg-0b4a28b7131b0899e",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "poc"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "poc"
+                }
+            ],
+            "VpcId": "vpc-0e6c846881215aff9"
+        },
+        {
+            "Description": "poc db access",
+            "GroupName": "db-poc",
+            "IpPermissions": [
+                {
+                    "FromPort": 5432,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "71.204.152.97/32",
+                            "Description": "Allow Home to DB"
+                        },
+                        {
+                            "CidrIp": "172.16.0.0/23",
+                            "Description": "Allow VPC to DB"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 5432,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "588487667149",
+            "GroupId": "sg-0dce06a74d8541d9c",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "VpcId": "vpc-0e6c846881215aff9"
+        },
+        {
+            "Description": "load-balancer-wizard-1 created on 2019-11-23T06:39:13.098-08:00",
+            "GroupName": "LB-Project-LB2",
+            "IpPermissions": [
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "71.204.152.97/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "588487667149",
+            "GroupId": "sg-0ea55a7c47bac5c16",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "VpcId": "vpc-0e6c846881215aff9"
+        },
+        {
+            "Description": "default VPC security group",
+            "GroupName": "default",
+            "IpPermissions": [
+                {
+                    "FromPort": 5432,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "71.204.152.97/32",
+                            "Description": "Home to DB"
+                        },
+                        {
+                            "CidrIp": "172.16.0.0/23"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 5432,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": [
+                        {
+                            "GroupId": "sg-edf5f1a2",
+                            "UserId": "588487667149"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "588487667149",
+            "GroupId": "sg-edf5f1a2",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "poc-db"
+                }
+            ],
+            "VpcId": "vpc-808e33f8"
+        }
+    ]
+}

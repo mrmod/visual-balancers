@@ -1,0 +1,39 @@
+{
+    "SecurityGroups": [
+        {
+            "Description": "load-balancer-wizard-1 created on 2019-11-23T06:38:07.892-08:00",
+            "GroupName": "LB-Project-LB1",
+            "IpPermissions": [
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "71.204.152.97/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "588487667149",
+            "GroupId": "sg-047784e4b2f8ed1a2",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "VpcId": "vpc-0e6c846881215aff9"
+        }
+    ]
+}
